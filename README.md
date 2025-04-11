@@ -1,7 +1,7 @@
 # Nifi in Agentic AI
 
+![nifi-agenticAI](https://github.com/user-attachments/assets/1bceb23c-9362-4199-844d-c05458837aa5)
 
-![e2e-malaytwits-nifi-cai](https://github.com/user-attachments/assets/43eea365-494e-46a5-b330-70fd20d2e327)
 
 
 ```
