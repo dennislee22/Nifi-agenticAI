@@ -4,6 +4,8 @@
 
 
 
+<img width="658" alt="image" src="https://github.com/user-attachments/assets/35c4aad2-2ec4-493a-be05-256ab364d0ed" />
+
 ```
 curl -X 'POST'  'https://malay-deberta.cml.apps.company.com/predict/' -H 'Content-Type: application/json' -d '{"text": "kamu sangat comel"}'
 {"sentiment":[{"label":"positive","score":0.994461178779602}]}
@@ -11,6 +13,8 @@ curl -X 'POST'  'https://malay-deberta.cml.apps.company.com/predict/' -H 'Conten
 curl -X 'POST'  'https://malay-deberta.cml.apps.company.com/predict/' -H 'Content-Type: application/json' -d '{"text": "saya tak comel"}'
 {"sentiment":[{"label":"negative","score":0.9951584935188293}]}
 ```
+
+
 
 <img width="1019" alt="image" src="https://github.com/user-attachments/assets/9598d99d-bcbc-4ac6-a4c4-c74e53b916d0" />
 
