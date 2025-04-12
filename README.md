@@ -2,7 +2,7 @@
 
 ![nifi-agenticAI](https://github.com/user-attachments/assets/1bceb23c-9362-4199-844d-c05458837aa5)
 
-In an **Agentic AI** system, the first phase takes place with `Perception` by involving data ingestion and curation. This step collects and transforms raw data from various sources into structured input for `Reasoning` engine. 
+In an **Agentic AI** system, the initial phase begins with `Perception`, which focuses on ingesting and curating data. During this stage, raw data from diverse sources is gathered and converted into a structured format suitable for the `Reasoning` engine. This process ensures the information is accurate, relevant, and aligned with the use case.
 
 <img width="727" alt="image" src="https://github.com/user-attachments/assets/2384f7fc-a303-4da7-bc41-d2d0eced10e2" /><br>
 
