@@ -2,10 +2,15 @@
 
 ![nifi-agenticAI](https://github.com/user-attachments/assets/1bceb23c-9362-4199-844d-c05458837aa5)
 
-In an **Agentic AI** system, `Perception` tools transform raw input into structured signals for `Reasoning` engine. Apache NiFi fits this role seamlessly, thanks to its visual, flow-based architecture and powerful integration capabilities. Here's the Agentic AI demo that illustrates how NiFi can effortlessly construct a real-time data pipeline for live marketing scenarios on social media platform. The business use case involves analyzing audience feedback from incoming comments in real time, allowing the promoter to swiftly adjust their strategy based on the results of the sentiment analysis, e.g. positive or negative.
+In an **Agentic AI** system, the first phase takes place with `Perception` by involving data ingestion and curation. This step collects and transforms raw data from various sources into structured input for `Reasoning` engine. 
+
+<img width="727" alt="image" src="https://github.com/user-attachments/assets/2384f7fc-a303-4da7-bc41-d2d0eced10e2" /><br>
+
+Apache NiFi fits this `Perception` role seamlessly, thanks to its visual, flow-based architecture, powerful ingestion and integration capabilities. NiFi can transform large volumes of data into actionable insights. 
+This article describes a real-life demo that illustrates how NiFi can effortlessly construct a real-time data pipeline for live marketing scenarios on social media platform. The business use case involves analyzing audience feedback from incoming comments in real time, allowing the promoter to swiftly adjust their strategy based on the results of the sentiment analysis, e.g. positive or negative.
 
 ## <a name="toc_1"></a>Perception
-During a livestream product promotion, user comments are ingested in real time and sent to a Kafka topic. NiFi’s `ConsumeKafka` processor subscribes to this stream and pulls the comments into Nifi FlowFiles. 
+During a livestream product promotion, social media audiences' comments are ingested in real time and sent to a Kafka topic. NiFi’s `ConsumeKafka` processor subscribes to this stream and pulls the comments into Nifi FlowFiles. 
 
 <img width="1019" alt="image" src="https://github.com/user-attachments/assets/9598d99d-bcbc-4ac6-a4c4-c74e53b916d0" />
 
@@ -28,11 +33,11 @@ Here's the sample of the table records that have been inserted by the Nifi's `Pu
 <img width="1118" alt="image" src="https://github.com/user-attachments/assets/e0bdbe62-1048-4de8-8c2e-7b290e0c85c0" /><br>
 
 ## <a name="toc_2"></a>Reasoning
-The platform uses **FastAPI** to expose an inference API powered by a Transformer-based AI model. Clients send user comments (in a specific language), and the model returns analysis results, such as sentiment or classification.
+Reasoning engine analyzes the information, makes inferences/predictions using general-purpose of specialized AI model. In this demo, CAI uses **FastAPI** to expose an inference API powered by a Transformer-based multilingual **DeBERTa** model for concluding the sentiment of the streaming comments in real-time. Social media audience send comments in a specific language, and the model returns analysis results, in the form of **positive** or **negative** sentiment.
 
 <img width="658" alt="image" src="https://github.com/user-attachments/assets/35c4aad2-2ec4-493a-be05-256ab364d0ed" /><br>
 
-The model analyzes the sentiment and returns a structured JSON payload, for example:
+The output is returned in the form of structured JSON payload, for example:
 
 ```
 curl -X 'POST'  'https://malay-deberta.cml.apps.company.com/predict/' -H 'Content-Type: application/json' -d '{"text": "kamu sangat comel"}'
@@ -42,8 +47,8 @@ curl -X 'POST'  'https://malay-deberta.cml.apps.company.com/predict/' -H 'Conten
 {"sentiment":[{"label":"negative","score":0.9951584935188293}]}
 ```
 
-## Feedback Presentation
-Grafana connects to PostgreSQL and visualizes the sentiment labels in real time, offering live feedback on how viewers are reacting to the promotion.
+## Act & Learn
+Grafana connects to PostgreSQL as the source and visualizes the sentiment labels in real time, offering live feedback on how viewers are reacting to the promotion.
 
 <img width="1429" alt="image" src="https://github.com/user-attachments/assets/14399099-1bca-4186-af6e-c057f7cb913e" /><br>
 
