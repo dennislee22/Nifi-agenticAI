@@ -10,7 +10,7 @@ app = FastAPI()
 # Check if CUDA (GPU) is available, otherwise default to CPU
 device = 0 if torch.cuda.is_available() else -1
 
-sentiment_analysis = pipeline("sentiment-analysis", model="malay-deberta-xsmall", device=device)
+sentiment_analysis = pipeline("sentiment-analysis", model="malay-deberta", device=device)
 
 class TextRequest(BaseModel):
     text: str
