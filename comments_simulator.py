@@ -4,7 +4,7 @@ import random
 import time
 from datetime import datetime
 
-# Connect to kafka in other namespace within same K8s cluster
+# Connect to kafka in other namespace within the same K8s cluster
 KAFKA_BROKER = 'my-cluster-kafka-bootstrap.kafkanodepool.svc.cluster.local:9092'
 KAFKA_TOPIC = 'malay-comments'
 
@@ -13,6 +13,7 @@ producer = KafkaProducer(
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 
+# Msg in Malay language
 messages = [
     {"text": "kamu sangat comel"},
     {"text": "saya tak comel"}
