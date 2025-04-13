@@ -14,7 +14,11 @@ During a livestream product promotion, social media audiences' comments are inge
 
 <img width="1019" alt="image" src="https://github.com/user-attachments/assets/9598d99d-bcbc-4ac6-a4c4-c74e53b916d0" />
 
-These are passed to an `InvokeHTTP` processor, which sends them to an Cloudera AI (CAI) platform acting as the [Reasoning](#toc_2) engine. NiFi’s `EvaluateJsonPath` processor extracts the sentiment label and score from the JSON and promotes them to attributes. 
+These are passed to an `InvokeHTTP` processor, which sends them to an Cloudera AI (CAI) platform acting as the [Reasoning](#toc_2) engine.
+
+<img width="708" alt="image" src="https://github.com/user-attachments/assets/91808e33-dba8-4655-a3c3-6ae0a7d4a89d" /><br>
+
+NiFi’s `EvaluateJsonPath` processor extracts the sentiment label and score from the JSON and promotes them to attributes. 
 
 <img width="723" alt="image" src="https://github.com/user-attachments/assets/c3bb9937-86fa-49d3-a9d6-e8fb6fe267e2" /><br>
 
