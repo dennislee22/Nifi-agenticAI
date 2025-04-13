@@ -4,7 +4,8 @@ import random
 import time
 from datetime import datetime
 
-KAFKA_BROKER = 'my-cluster-kafka-bootstrap.dlee-kafkanodepool.svc.cluster.local:9092'
+# Connect to kafka in other namespace within same K8s cluster
+KAFKA_BROKER = 'my-cluster-kafka-bootstrap.kafkanodepool.svc.cluster.local:9092'
 KAFKA_TOPIC = 'malay-comments'
 
 producer = KafkaProducer(
